@@ -1,0 +1,23 @@
+.container {
+  width: 90%;
+  margin: auto;
+  
+}
+.container .new-tweet div {
+  font-family: 'Bungee', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+.container .new-tweet textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid black;
+}
+.container .new-tweet button {
+  
+  background-color: #4056A1;
+  color: #fff;
+  border: none;
+}
