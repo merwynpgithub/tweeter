@@ -21,29 +21,33 @@
   color: #fff;
   border: none;
 }
-.tweet {
+.tweet-section {
   margin-top: 2.5em;
   border: 2px solid black;
   padding: 0.5em;
 }
-.tweet:hover {
-  box-shadow: 5px 5px 5px #545149;;
+.tweet-section:hover {
+  box-shadow: 10px 10px 0px #96a7dd;;
 }
-.tweet header, .tweet .message-footer {
+.tweet-section header, .tweet-section .message-footer {
   display: flex;
   justify-content: space-between;
 }
 .tweet header h4 {
   font-weight: 300;
 }
-.tweet header .handle {
+.tweet-section header .handle {
   color: hsl(0, 0%, 65%);
 }
-.tweet section {
+.tweet-section section {
   border-bottom: 2px solid black;
   padding-bottom: 1.25em;
   margin-bottom: 0.5em;
 }
 .message-footer i {
   color: #4056A1;
+}
+.message-footer i:hover {
+  cursor: pointer;
+  color: #b3a284;
 }
