@@ -29,15 +29,20 @@
 .tweet-section:hover {
   box-shadow: 10px 10px 0px #96a7dd;;
 }
-.tweet-section header, .tweet-section .message-footer {
+.tweet-section header, .tweet-section .message-footer, 
+.tweet-section .profile-name {
   display: flex;
   justify-content: space-between;
+}
+.tweet-section .profile-name img {
+  height: 70px;
+  margin: 10px;
 }
 .tweet header h4 {
   font-weight: 300;
 }
 .tweet-section header .handle {
-  color: hsl(0, 0%, 65%);
+  color: hsl(226, 100%, 85%);
 }
 .tweet-section section {
   border-bottom: 2px solid black;
