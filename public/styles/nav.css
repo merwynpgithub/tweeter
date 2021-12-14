@@ -1,4 +1,8 @@
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100px;
   font-family: 'Bungee', sans-serif;
   height: 120px;
   background-color: #4056A1;
