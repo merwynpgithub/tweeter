@@ -1,8 +1,9 @@
 .container {
   width: 90%;
   margin: auto;
-  
 }
+/* --------------------------------- */
+/* Tweet form style */
 .container .new-tweet div {
   font-family: 'Bungee', sans-serif;
   display: flex;
@@ -21,6 +22,8 @@
   color: #fff;
   border: none;
 }
+/* ---------------------------------- */
+/* Tweets section style */
 .tweet-section {
   margin-top: 2.5em;
   border: 2px solid black;
@@ -56,3 +59,4 @@
   cursor: pointer;
   color: #b3a284;
 }
+/* --------------------------------- */
