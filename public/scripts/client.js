@@ -3,14 +3,18 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
+$(document).ready(function () {
+
   const loadTweet = () => {
     $.get('/tweets', (tweets) => {
-      renderTweets(tweets);
-    });
-  };
+    renderTweets(tweets);
+  })
+};
+
   //render the tweets from the downloaded JSON 
   const renderTweets = (tweets) => {
+    $container = $("#current-tweets");
+    $container.empty();
     tweets.forEach(tweet => {
       createTweetElement(tweet);
     });
@@ -39,11 +43,27 @@ $(document).ready(function() {
       </footer>
     </article>
     `;
-    $(".current-tweets").append(tweetElement);
+    $("#current-tweets").append(tweetElement);
   };
 
   loadTweet();
   
+  //create new tweet with form submission
+  const form  = $(".new-tweet form");
+  form.submit(function(e) {
+    e.preventDefault();
+
+    const serialData = $(this).serialize();
+
+    $.post('/tweets', serialData)
+    .then((resp) => {
+      console.log(resp);
+      loadTweet();
+
+    });
+    // $("#tweet-text").val('');
+  });
+
 });
 
 
