@@ -7,9 +7,9 @@ $(document).ready(function () {
 
   const loadTweet = () => {
     $.get('/tweets', (tweets) => {
-    renderTweets(tweets);
-  })
-};
+      renderTweets(tweets);
+    })
+  };
 
   //render the tweets from the downloaded JSON 
   const renderTweets = (tweets) => {
@@ -47,25 +47,28 @@ $(document).ready(function () {
   };
 
   loadTweet();
-  
+
+
+
   //create new tweet with form submission
-  const form  = $(".new-tweet form");
-  form.submit(function(e) {
+  const form = $(".new-tweet form");
+
+  form.submit(function (e) {
     e.preventDefault();
 
-    //Alert if Tweet is empty
-    if (!$("#tweet-text").val()) {
-      alert("Tweet message cannot be empty! Please add a message");
-      return;
-    }
-    
     const serialData = $(this).serialize();
-    $.post('/tweets', serialData)
-    .then((resp) => {
-      console.log(resp);
-      loadTweet();
 
-    });
+    const tweetText = serialData.slice(5).replaceAll("%20", " ");
+    //Alert if Tweet is longer than 140 characters
+    if (tweetText.length > 140) {
+      alert("Please shorten your tweet.");
+      form.focus();
+      return false;
+    }
+    $.post('/tweets', serialData)
+      .then((resp) => {
+        loadTweet();
+      });
     $("#tweet-text").val('');
   });
 
