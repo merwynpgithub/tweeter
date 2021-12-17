@@ -53,15 +53,20 @@ $(document).ready(function () {
   form.submit(function(e) {
     e.preventDefault();
 
+    //Alert if Tweet is empty
+    if (!$("#tweet-text").val()) {
+      alert("Tweet message cannot be empty! Please add a message");
+      return;
+    }
+    
     const serialData = $(this).serialize();
-
     $.post('/tweets', serialData)
     .then((resp) => {
       console.log(resp);
       loadTweet();
 
     });
-    // $("#tweet-text").val('');
+    $("#tweet-text").val('');
   });
 
 });
