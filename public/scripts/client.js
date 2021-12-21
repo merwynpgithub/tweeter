@@ -21,6 +21,7 @@ $(document).ready(function () {
   };
   //generate HTML element for each tweet
   const createTweetElement = (tweet) => {
+    const timeStamp = $.timeago(tweet.created_at);;
     const tweetElement = `
     <article class="tweet-section">
       <header>
@@ -34,7 +35,7 @@ $(document).ready(function () {
       ${tweet.content.text}
       </section>
       <footer class="message-footer">
-        <div>${tweet.created_at} ago</div>
+        <div>${timeStamp}</div>
         <div>
           <i class="fas fa-solid fa-flag"></i>
           <i class="fas fa-solid fa-retweet"></i>
