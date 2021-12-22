@@ -19,29 +19,37 @@ $(document).ready(function () {
       createTweetElement(tweet);
     });
   };
+
+  //using helper function to prevent XSS Cross Site Scripting
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //generate HTML element for each tweet
   const createTweetElement = (tweet) => {
-    const timeStamp = $.timeago(tweet.created_at);;
+    const timeStamp = $.timeago(tweet.created_at);
     const tweetElement = `
     <article class="tweet-section">
-      <header>
-        <div class="profile-name">
-          <img src=${tweet.user.avatars} alt=${tweet.user.handle}>
-          <h4>${tweet.user.name}</h4>
-        </div>
-        <h4 class="handle">${tweet.user.handle}</h4>
-      </header>
-      <section class="message">
-      ${tweet.content.text}
-      </section>
-      <footer class="message-footer">
-        <div>${timeStamp}</div>
-        <div>
-          <i class="fas fa-solid fa-flag"></i>
-          <i class="fas fa-solid fa-retweet"></i>
-          <i class="fas fa-solid fa-heart"></i>
-        </div>
-      </footer>
+    <header>
+    <div class="profile-name">
+    <img src=${tweet.user.avatars} alt=${tweet.user.handle}>
+    <h4>${tweet.user.name}</h4>
+    </div>
+    <h4 class="handle">${tweet.user.handle}</h4>
+    </header>
+    <div class="message">
+    <p>${escape(tweet.content.text)}</p>
+    </div>
+    <footer class="message-footer">
+    <div>${timeStamp}</div>
+    <div>
+    <i class="fas fa-solid fa-flag"></i>
+    <i class="fas fa-solid fa-retweet"></i>
+    <i class="fas fa-solid fa-heart"></i>
+    </div>
+    </footer>
     </article>
     `;
     $("#current-tweets").append(tweetElement);
