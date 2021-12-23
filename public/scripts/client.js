@@ -5,6 +5,12 @@
  */
 $(document).ready(function () {
 
+  //slide the form------stretch
+  $("nav .tweet").click(function() {
+    $(".new-tweet").slideToggle();
+    $("#tweet-text").focus(); //focus the cursor on the textarea
+  });
+
   const loadTweet = () => {
     $.get('/tweets', (tweets) => {
       renderTweets(tweets);

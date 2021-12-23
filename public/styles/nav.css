@@ -13,6 +13,11 @@ nav {
  }
  nav .tweet {
   font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer; /* give a click feature */
+ }
+ nav .tweet:hover {
+   color: rgb(0, 0, 38); /* change font color to inform user of click action */
+   font-weight: bold;
  }
  nav .tweet span {
    font-weight: 600;

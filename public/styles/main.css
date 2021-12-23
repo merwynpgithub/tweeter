@@ -9,6 +9,9 @@
   display: flex;
   justify-content: space-between;
 }
+.container .new-tweet {
+  display: none; /* initially hide the form */
+}
 .container .new-tweet textarea {
   width: 100%;
   outline: none;
