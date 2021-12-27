@@ -6,13 +6,14 @@
 $(document).ready(function () {
 
   //slide the form------stretch
-  $("nav .tweet").click(function() {
+  $("nav .tweet").click(function () {
     $(".new-tweet").slideToggle();
     $("#tweet-text").focus(); //focus the cursor on the textarea
   });
 
   const loadTweet = () => {
     $.get('/tweets', (tweets) => {
+      $(".error-div").remove();
       renderTweets(tweets);
     })
   };
@@ -76,8 +77,17 @@ $(document).ready(function () {
     const tweetText = serialData.slice(5).replaceAll("%20", " ");
     //Alert if Tweet is longer than 140 characters
     if (tweetText.length > 140) {
-      alert("Please shorten your tweet.");
-      form.focus();
+      // alert("Please shorten your tweet.");
+
+      //Remove the error div if it exists to add it again
+      $(".error-div").remove();
+
+      const errorDiv = `
+      <div class="error-div" style="color:red;font-family:sans-serif;">Please reduce your Tweet to 140 characters</div>
+      `;
+      //add the error div
+      $(".new-tweet").prepend(errorDiv);
+      $("#tweet-text").focus();
       return false;
     }
     $.post('/tweets', serialData)
