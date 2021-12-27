@@ -3,6 +3,25 @@
   margin: auto;
 }
 /* --------------------------------- */
+/* Scroll button style */
+#scroll {
+  position: fixed;
+  top: 90%;
+  right: 1em;
+}
+#scroll button {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /*hide the button initially*/
+}
+/* --------------------------------- */
 /* Tweet form style */
 .container .new-tweet div {
   font-family: 'Bungee', sans-serif;

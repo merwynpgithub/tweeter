@@ -30,6 +30,7 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  
 </head>
 
 <body>
@@ -51,8 +52,14 @@
     </div>
   </header>
 
+  
   <!-- Page-specific (main) content here -->
   <main class="container">
+    <!-- Scrolling button -->
+  <section id="scroll">
+    <button><i class="fas fa-angle-double-up" aria-hidden="true"></i></button>
+  </section>
+  
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets">
@@ -68,6 +75,7 @@
     <section id="current-tweets"></section>
   </main>
   <script src="scripts/composer-char-counter.js"></script>
+  <script type = "text/javascript" src="scripts/composer.js"></script>
 </body>
 
 </html>
