@@ -82,3 +82,13 @@
   color: #b3a284;
 }
 /* --------------------------------- */
+
+/* For desktop screens only */
+@media only screen and (min-width: 1024px) {
+  .container {
+    float: right;
+    width: 65%;
+    padding-right: 2.5em;
+    margin-top: 120px;
+  }
+}

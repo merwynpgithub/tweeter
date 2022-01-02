@@ -9,5 +9,7 @@ $(document).ready(function() {
   });
   $("#scroll button").click(function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    $(".new-tweet").show();
+    $("#tweet-text").focus();
   });
 });

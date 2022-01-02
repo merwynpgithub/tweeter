@@ -1,4 +1,4 @@
-header.head {
+.head {
   margin-top: 120px;
   width: 100%;
   height: 400px;
@@ -6,7 +6,17 @@ header.head {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 1em;
   background-color: hsl(0, 0%, 47%);
 background-image: url("https://www.transparenttextures.com/patterns/cream-dust.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+/* For desktop screens only */
+@media only screen and (min-width: 1024px) {
+  .head {
+    margin-top: 200px;
+    width: 30%;
+    float: left;
+  }
 }
