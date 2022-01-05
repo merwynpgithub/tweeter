@@ -52,9 +52,9 @@ $(document).ready(function () {
     <footer class="message-footer">
     <div>${timeStamp}</div>
     <div>
-    <i class="fas fa-solid fa-flag"></i>
-    <i class="fas fa-solid fa-retweet"></i>
-    <i class="fas fa-solid fa-heart"></i>
+    <i title="flag" class="fas fa-solid fa-flag"></i>
+    <i title="retweet" class="fas fa-solid fa-retweet"></i>
+    <i title="like" class="fas fa-solid fa-heart"></i>
     </div>
     </footer>
     </article>
