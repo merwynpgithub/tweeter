@@ -1,0 +1,92 @@
+@import '_variables.scss';
+
+.container {
+  width: 90%;
+  margin: auto;
+
+  /* Scroll button style */
+  #scroll {
+    position: fixed;
+    top: 90%;
+    right: 1em;
+    button {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      width: 70px;
+      height: 70px;
+      outline: none;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none; /*hide the button initially*/
+    }
+  }
+
+  /* Tweet form style */
+  .new-tweet {
+    display: none; /* initially hide the form */
+    div {
+      font-family: 'Bungee', sans-serif;
+      display: flex;
+      justify-content: space-between;
+    }
+    textarea {
+      width: 100%;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      border-bottom: 2px solid black;
+      margin-bottom: 0.5em;
+    }
+    button {
+      background-color: #4056A1;
+      color: #fff;
+      border: none;
+    }
+  }
+  /* Tweets section style */
+  .tweet-section header, .tweet-section .message-footer, 
+  .tweet-section .profile-name {
+    display: flex;
+    justify-content: space-between;
+  }
+  .tweet-section {
+    margin-top: 2.5em;
+    border: 2px solid black;
+    padding: 0.5em;
+    &:hover {
+      box-shadow: 10px 10px 0px #96a7dd;;
+    }
+    .profile-name img {
+      height: 70px;
+      margin: 10px;
+    }
+    header h4 {
+      font-weight: 300;
+    }
+    header .handle {
+      color: hsl(226, 100%, 85%);
+    }
+    .message-footer i {
+      color: #4056A1;
+    }
+    .message-footer i:hover {
+      cursor: pointer;
+      color: #b3a284;
+    }
+  }
+}
+
+
+/* --------------------------------- */
+
+/* For desktop screens only */
+@media only screen and (min-width: $desktop-screen-size) {
+  .container {
+    float: right;
+    width: 65%;
+    padding-right: 2.5em;
+    margin-top: 120px;
+  }
+}

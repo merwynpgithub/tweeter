@@ -1,15 +1,16 @@
 .container {
   width: 90%;
   margin: auto;
+  /* Scroll button style */
+  /* Tweet form style */
+  /* Tweets section style */
 }
-/* --------------------------------- */
-/* Scroll button style */
-#scroll {
+.container #scroll {
   position: fixed;
   top: 90%;
   right: 1em;
 }
-#scroll button {
+.container #scroll button {
   background-color: red;
   color: white;
   font-weight: bold;
@@ -19,17 +20,17 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  display: none; /*hide the button initially*/
-}
-/* --------------------------------- */
-/* Tweet form style */
-.container .new-tweet div {
-  font-family: 'Bungee', sans-serif;
-  display: flex;
-  justify-content: space-between;
+  display: none;
+  /*hide the button initially*/
 }
 .container .new-tweet {
-  display: none; /* initially hide the form */
+  display: none;
+  /* initially hide the form */
+}
+.container .new-tweet div {
+  font-family: "Bungee", sans-serif;
+  display: flex;
+  justify-content: space-between;
 }
 .container .new-tweet textarea {
   width: 100%;
@@ -44,45 +45,38 @@
   color: #fff;
   border: none;
 }
-/* ---------------------------------- */
-/* Tweets section style */
-.tweet-section {
+.container .tweet-section header, .container .tweet-section .message-footer,
+.container .tweet-section .profile-name {
+  display: flex;
+  justify-content: space-between;
+}
+.container .tweet-section {
   margin-top: 2.5em;
   border: 2px solid black;
   padding: 0.5em;
 }
-.tweet-section:hover {
-  box-shadow: 10px 10px 0px #96a7dd;;
+.container .tweet-section:hover {
+  box-shadow: 10px 10px 0px #96a7dd;
 }
-.tweet-section header, .tweet-section .message-footer, 
-.tweet-section .profile-name {
-  display: flex;
-  justify-content: space-between;
-}
-.tweet-section .profile-name img {
+.container .tweet-section .profile-name img {
   height: 70px;
   margin: 10px;
 }
-.tweet header h4 {
+.container .tweet-section header h4 {
   font-weight: 300;
 }
-.tweet-section header .handle {
-  color: hsl(226, 100%, 85%);
+.container .tweet-section header .handle {
+  color: #b3c4ff;
 }
-.tweet-section section {
-  border-bottom: 2px solid black;
-  padding-bottom: 1.25em;
-  margin-bottom: 0.5em;
-}
-.message-footer i {
+.container .tweet-section .message-footer i {
   color: #4056A1;
 }
-.message-footer i:hover {
+.container .tweet-section .message-footer i:hover {
   cursor: pointer;
   color: #b3a284;
 }
-/* --------------------------------- */
 
+/* --------------------------------- */
 /* For desktop screens only */
 @media only screen and (min-width: 1024px) {
   .container {
